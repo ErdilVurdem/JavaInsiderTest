@@ -19,9 +19,6 @@ public class UseInsiderOpenPositionsPage {
     @FindBy (id = "filter-by-department")
     public WebElement filterByDepartmentDropdown;
 
-    @FindBy (id = "resultCounter")
-    public WebElement resultCounter;
-
     @FindBy (css = ".position-list-item-wrapper.bg-light")
     public List<WebElement> browseOpenPositionsList;
 
@@ -37,10 +34,7 @@ public class UseInsiderOpenPositionsPage {
     @FindBy (xpath = "(//*[@class='btn btn-yellow rounded has-icon page-button next pr-4'])[2]")
     public WebElement nextPageArrow;
 
-    @FindBy (xpath = "(//*[@role='presentation'])[2]")
-    public WebElement firstArrow;
+    @FindBy (xpath = "(//*[@class='btn btn-navy rounded pt-2 pr-5 pb-2 pl-5'])[1]")
+    public WebElement firstRoleButton;
 
-
-    @FindBy (xpath = "(//*[@role='presentation'])[4]")
-    public WebElement secondArrow;
 }

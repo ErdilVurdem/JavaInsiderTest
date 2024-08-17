@@ -1,7 +1,5 @@
 package tests;
 
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -42,9 +40,7 @@ public class InsiderTest  extends TestBaseRapor {
         Select selectDepartment = new Select(useInsiderOpenPositionsPage.filterByDepartmentDropdown);
         selectDepartment.selectByVisibleText("Quality Assurance");
 
-        ReusableMethods.bekle(7);
-
-
+        ReusableMethods.wait(5);
 
         do {
             for (int i = 0; i < useInsiderOpenPositionsPage.browseOpenPositionsList.size(); i++) {
@@ -54,11 +50,18 @@ public class InsiderTest  extends TestBaseRapor {
                 Assert.assertTrue(useInsiderOpenPositionsPage.positionLocationList.get(i).getText().contains("Istanbul, Turkey"));
             }
             ReusableMethods.scrollToElement(useInsiderOpenPositionsPage.nextPageArrow);
-            ReusableMethods.bekle(2);
+            ReusableMethods.wait(2);
             if (useInsiderOpenPositionsPage.nextPageArrow.isEnabled()){
+                ReusableMethods.scrollToElement(useInsiderOpenPositionsPage.nextPageArrow);
                 useInsiderOpenPositionsPage.nextPageArrow.click();
             }
         } while (useInsiderOpenPositionsPage.nextPageArrow.isEnabled());
 
+        ReusableMethods.scrollToElement(useInsiderOpenPositionsPage.firstRoleButton);
+        useInsiderOpenPositionsPage.firstRoleButton.click();
+        ReusableMethods.switchWindowWithTitle("Insider. - Account Director",Driver.getDriver());
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("https://jobs.lever.co/"));
+
+        Driver.quitDriver();
     }
 }
