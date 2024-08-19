@@ -12,11 +12,11 @@ public class UseInsiderCareersPage {
     }
 
     @FindBy(id = "career-find-our-calling")
-    public WebElement findYourCallingSection;
+    public WebElement findYourCallingSection; // Find Your Calling bölümü
 
     @FindBy (id = "career-our-location")
-    public WebElement ourLocationsSection;
+    public WebElement ourLocationsSection; // Our Locations bölümü
 
     @FindBy (css = ".elementor-container.elementor-column-gap-default")
-    public WebElement lifeAtInsiderSection;
+    public WebElement lifeAtInsiderSection; // Life At Insider bölümü
 }

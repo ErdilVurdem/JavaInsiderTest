@@ -12,13 +12,13 @@ public class UseInsiderHomePage {
     }
 
     @FindBy (id = "wt-cli-reject-btn")
-    public WebElement rejectCookiesButton;
+    public WebElement rejectCookiesButton; // Cookileri reddet butonu
 
     @FindBy (css = ".nav-item.dropdown:nth-of-type(6)")
-    public WebElement companyDropdownButton;
+    public WebElement companyDropdownButton; // Company dropdown butonu
 
     @FindBy (xpath = "(//*[@class='dropdown-sub'])[21]")
-    public WebElement careersButton;
+    public WebElement careersButton; // Company Dropdown içerisindeki Careers butonu
 
 
 
