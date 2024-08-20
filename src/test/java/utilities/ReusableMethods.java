@@ -47,10 +47,10 @@ public class ReusableMethods {
     public static void scrollToElement(WebElement element) {
         JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
         jse.executeScript("arguments[0].scrollIntoView();", element);
-        scrollPageCertainAmount(0, -150);
-        // burada 150 pixel yukarı kaydırma yapılmasının sebebi bazı durumlarda  JavascriptExecutor'ın yaptığı kaydırma
-        // işlemi sonrasında elementin sayfada gözükmeyecek şekilde yukarıda kalması ve böylece NoSuchElementException
-        // atması durumunun önüne geçmektir.
+        scrollPageCertainAmount(0, -200);
+        // burada 200 pixel yukarı kaydırma yapılmasının sebebi bazı durumlarda  JavascriptExecutor'ın yaptığı kaydırma
+        // işlemi sonrasında elementin sayfada gözükmeyecek şekilde yukarıda kalması ve böylece
+        // ElementClickInterceptedException atması durumunun önüne geçmektir.
     }
 
     public static void scrollPageCertainAmount(int horizontal, int vertical) {
